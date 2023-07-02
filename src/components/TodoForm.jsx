@@ -17,9 +17,9 @@ const TodoForm = (props) => {
     setInput("");
   };
   return (
-    <form action="" onSubmit={submitHandler}>
-      <input type="text" value={input} onChange={changeHandler} />
-      <button type="submit">ADD</button>
+    <form action="" onSubmit={submitHandler} className="flex justify-between gap-x-10 mt-3">
+      <input placeholder="add todo..." type="text" className="rounded-md text-sm  border-gray-300 focus:ring-0 focus:border-2 focus:border-violet-600 py-0 px-1 w-52" value={input} onChange={changeHandler} />
+      <button type="submit" className="bg-violet-600 px-3 py-1 text-white rounded-md ml-2 ">Add</button>
     </form>
   );
 };
