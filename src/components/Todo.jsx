@@ -1,6 +1,6 @@
 const Todo = ({ todo, onComplete,onDelete,onEdit }) => {
   return (
-    <div key={todo.id} className="flex justify-between items-center w-1/2 mt-4">
+    <div key={todo.id} className="flex justify-between items-center w-full md:w-1/2 mt-4">
       <div
         className={`font-bold cursor-pointer ${
           todo.isCompleted ? "line-through text-gray-300" : ""

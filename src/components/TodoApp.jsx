@@ -10,7 +10,7 @@ const TodoApp = () => {
 
   useEffect(() => {
     filterTodos(selectedOption.value);
-  }, [selectedOption, todos]);
+  }, [todos, selectedOption]);
 
   const addTodo = (input) => {
     // console.log(input);
@@ -46,11 +46,13 @@ const TodoApp = () => {
   const filterTodos = (status) => {
     switch (status) {
       case "Completed":
-        return setFilteredTodos(todos.filter((t) => t.isCompleted));
-      case "UnCompleted":
-        return setFilteredTodos(todos.filter((t) => !t.isCompleted));
+        setFilteredTodos(todos.filter((t) => t.isCompleted));
+        break;
+      case "Uncompleted":
+        setFilteredTodos(todos.filter((t) => !t.isCompleted));
+        break;
       default:
-        return setFilteredTodos(todos);
+        setFilteredTodos(todos);
     }
   };
 
@@ -59,7 +61,7 @@ const TodoApp = () => {
     filterTodos(e.value);
   };
   return (
-    <div className="bg-white p-4 border border-gray-300 rounded w-1/2 flex flex-col items-center justify-between ">
+    <div className="bg-white p-6 md:w-1/2 border border-gray-300 rounded flex flex-col items-center justify-between ">
       <NavBar
         unCompletedTodos={todos.filter((todo) => !todo.isCompleted).length}
         filterTodos={filterTodos}

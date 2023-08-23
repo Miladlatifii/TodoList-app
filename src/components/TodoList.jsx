@@ -10,7 +10,7 @@ const Todolist = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
     setEdit({ id: null, text: "" });
   };
   const renderTodos = () => {
-    if (todos.length === 0) return <p>add some todos</p>;
+    if (todos.length === 0) return <p className="mt-3">add some todos</p>;
 
     return todos.map((todo) => {
       return (

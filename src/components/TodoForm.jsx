@@ -25,12 +25,12 @@ const TodoForm = (props) => {
     <form
       action=""
       onSubmit={submitHandler}
-      className="flex justify-between gap-x-10 mt-3"
+      className="flex justify-between mt-3"
     >
       <input
         placeholder={props.edit ? "edit todo..." : "add todo..."}
         type="text"
-        className="rounded-md text-sm  border-gray-300 focus:ring-0 focus:border-2 focus:border-violet-600 py-0 px-1 w-52"
+        className="rounded-md text-sm border-gray-300 focus:ring-0 focus:border-2 focus:border-violet-600 py-2 px-1"
         value={input}
         onChange={changeHandler}
         ref={inputRef}
